@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+svg,
+style {
+  height: 4rem;
+  width: 4rem;
+  stroke: #fefefe;
+  fill: #fefefe;
+  cursor: pointer;
+}
+svg path,
+style path {
+  fill: #fefefe;
+}
+
+nav {
+  height: 6rem;
+  width: 100%;
+  position: fixed;
+  color: #fefefe;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 245, 0.062745098);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 0 0 1rem 1rem;
+  font-size: 1.4rem;
+}
+nav .logo {
+  height: 5rem;
+  width: 15rem;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+}
+nav ul li {
+  margin-right: 5rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+nav ul li:hover {
+  color: #00fff5;
+  letter-spacing: 3px;
+  text-shadow: 0 0px 32px 10rem #00fff5;
+}
+
+.sidebar {
+  z-index: 100;
+  font-size: 2rem;
+  color: #fefefe;
+  top: 0;
+  right: -30rem;
+  background: rgba(221, 221, 221, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 245, 0.3137254902);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem 0 0 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.25s ease-in-out;
+}
+
+.active {
+  right: 0;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background: #222831;
+  background-attachment: fixed;
+}
+section {
+  min-height: 100vh;
+  color: #fefefe;
+  font-size: 1.5rem;
+}
+
+.wraper {
+  height: 70rem;
+  min-width: 50rem;
+  max-width: 60rem;
+}
+.wraper #card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1000ms;
+  transform-style: preserve-3d;
+}
+.wraper #card .front,
+.wraper #card .back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background: rgba(221, 221, 221, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 3rem;
+  transition: all 0.1s ease-in-out;
+}
+.wraper #card .front .icon,
+.wraper #card .back .icon {
+  height: 30rem;
+  width: 30rem;
+  border-radius: 50%;
+  border: 1px solid #fefefe;
+  transition: all 0.1s ease-in-out;
+  overflow: hidden;
+}
+.wraper #card .front button,
+.wraper #card .back button {
+  letter-spacing: 1px;
+  position: relative;
+  height: 5rem;
+  width: 20rem;
+  transition: all 0.1s ease-in;
+}
+.wraper #card .front .check,
+.wraper #card .back .check {
+  border: 1px solid #fefefe;
+  border-radius: 2rem;
+}
+.wraper #card .front .check:hover,
+.wraper #card .back .check:hover {
+  color: #00fff5;
+  border: 1px solid #00fff5;
+  font-weight: 600;
+}
+.wraper #card .front .change,
+.wraper #card .back .change {
+  height: 4rem;
+  width: auto;
+}
+.wraper #card .front .change::before,
+.wraper #card .back .change::before {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: #00fff5;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in;
+}
+.wraper #card .front .change:hover::before,
+.wraper #card .back .change:hover::before {
+  width: 100%;
+}
+.wraper #card .front input[type],
+.wraper #card .back input[type] {
+  background-color: transparent;
+  outline: 2px solid #393e46;
+  color: #fefefe;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  height: 5rem;
+  width: 40rem;
+  transition: all 0.2s ease-in;
+}
+.wraper #card .front input[type]:focus,
+.wraper #card .back input[type]:focus {
+  color: #fefefe;
+  outline: 2px solid #00fff5;
+}
+.wraper #card .back {
+  transform: rotateY(180deg);
+}
+.wraper .flip {
+  transform: rotateY(180deg);
+}
+.wraper:hover > #card > .front, .wraper:hover > #card > .back, .wraper:hover > #card > .front > .icon, .wraper:hover > #card > .back > .icon {
+  border: 3px solid #00fff5;
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 245, 0.3137254902);
+}
+
+#link-history h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+#link-history ul li {
+  list-style-type: circle;
+}
+#link-history ul li a {
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in;
+}
+#link-history ul li a:hover {
+  color: #00fff5;
+}/*# sourceMappingURL=style.css.map */
